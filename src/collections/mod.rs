@@ -1,5 +1,5 @@
-mod linked_list;
+mod linked_stack;
 mod simple_vector;
 
-pub use linked_list::LinkedList;
+pub use linked_stack::LinkedStack;
 pub use simple_vector::SimpleVector;
