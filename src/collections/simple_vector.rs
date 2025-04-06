@@ -63,9 +63,8 @@ impl<T: std::marker::Copy> SimpleVector<T> {
     }
 
     fn grow(&mut self) {
-        let mut new_array: Box<[Option<T>]> = std::iter::repeat(None)
-            .take(self.array.len() * GROWTH_FACTOR)
-            .collect();
+        let mut new_array: Box<[Option<T>]> =
+            std::iter::repeat_n(None, self.array.len() * GROWTH_FACTOR).collect();
 
         new_array[..self.size].copy_from_slice(&self.array[..self.size]);
 
